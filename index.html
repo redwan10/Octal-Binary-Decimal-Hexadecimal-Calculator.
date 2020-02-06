@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Title -->
+  <title>Octal, Binary, Decimal, Hexadecimal Calculator.</title>
+  <style>
+    .wrapper {
+      text-align: center;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    form input {
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      height: 40px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+      border: none;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.8);
+      -webkit-appearance: none;
+      border-radius: 7px;
+      text-align: center;
+    }
+
+    form button {
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      border: none;
+      background-color: lightblue;
+      /*   box-shadow: inset 0 0 8px rgba(0,0,0,0.1); */
+      border-radius: 7px;
+      text-transform: capitalize;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form input:focus,
+    form input:active,
+    form button:focus,
+    form button:active {
+      outline: 0;
+    }
+
+    p#result {
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 500;
+      font-family: Arial;
+    }
+
+    p#result span {
+      font-weight: 600;
+    }
+
+    @media (max-width: 576px) {
+      form {
+        padding: 15px 10px;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+
+
+  <div class="wrapper">
+    <h3>Octal, Binary, Decimal, Hexadecimal Calculator.</h3>
+    <!-- number form -->
+    <form action="#" id="form" autocomplete="off">
+      <input id="input" type="number" placeholder="Type the Number and Submit">
+      <br>
+      <button id="button" type="submit">submit</button>
+    </form>
+  
+    <!-- view result -->
+    <p id="result"></p>
+  </div>
+
+
+
+
+
+
+
+  <script>
+    let form = document.getElementById('form'),
+        input = document.getElementById('input'),
+        thebtn = document.getElementById('button'),
+        result = document.getElementById('result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      let theValue = input.value;
+      let theNumber = Number(theValue)
+
+      result.innerHTML =
+        "Decimal = " + theNumber.toString(10) + "<br>" +
+        " Hexadecimal = " + theNumber.toString(16) + "<br>" +
+        " Octal = " + theNumber.toString(8) + "<br>" +
+        " Binary = " + theNumber.toString(2);
+    });
+  </script>
+
+
+
+
+</body>
+
+</html>
